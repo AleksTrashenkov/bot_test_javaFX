@@ -198,7 +198,7 @@ public class BotJarvisTelegramm extends TelegramLongPollingBot {
                                 System.out.println(ex);
                                 sendMessage.setText("Ошибка рассылки для: \n" + chatIDErr + "\nИмя: " +nameErr);
                                 sendMessage.setReplyMarkup(getInlKeyboardUserDel(chatIDErr, nameErr));
-                                sendMessage.setChatId("523626416");
+                                sendMessage.setChatId("your_id_telergamm_user");
                                 try {
                                     execute(sendMessage);
                                 }catch (TelegramApiException fdf){System.out.println(fdf);}
@@ -298,7 +298,7 @@ public class BotJarvisTelegramm extends TelegramLongPollingBot {
                     }catch (TelegramApiException e){
                         sendMessage.setText("Ошибка рассылки для: \n" + chatID + "\nИмя: " + name);
                         sendMessage.setReplyMarkup(getInlKeyboardUserDel(chatID, name));
-                        sendMessage.setChatId("523626416");
+                        sendMessage.setChatId("your_id_telergamm_user");
                         try {
                             execute(sendMessage);
                         }catch (TelegramApiException fdf){System.out.println(fdf);}
@@ -396,7 +396,7 @@ public class BotJarvisTelegramm extends TelegramLongPollingBot {
                 SendMessage sendMessage = new SendMessage();
                 DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yy HH:mm:ss");
                 String date = dateTimeFormatter.format(LocalDateTime.now());
-                sendMessage.setChatId("523626416");
+                sendMessage.setChatId("your_id_telergamm_user");
                 sendMessage.setText("Алексей" + ",\nПосле неожиданного отключения, я снова запустился. Дата моего запуска: " + date);
                 String sqlInsert = "INSERT INTO table_reboots (text, date) VALUES (?, ?);";
                 try {
@@ -1525,7 +1525,7 @@ public class BotJarvisTelegramm extends TelegramLongPollingBot {
         if(update.hasMessage()&&update.getMessage().hasText()){ //для проверки уровня доступа создана отдельная update проверка
             switch (message.getText()) {
                 case "/start":
-                    if (message.getChatId().toString().equals("523626416")) {
+                    if (message.getChatId().toString().equals("your_id_telergamm_user")) {
                         sendMsgHEADERAdm(message, "Здравствуйте, " + message.getFrom().getFirstName() + "! " + "Вы перешли на главную" + "\n" +
                                 "где Вам доступны доп функции, т.к. Вы админ!");
                     }else {
@@ -1717,11 +1717,11 @@ public class BotJarvisTelegramm extends TelegramLongPollingBot {
                     try {execute(chatAction); //Отправка уведомления о ответе Бота
                     } catch (TelegramApiException e) {
                         System.out.println(e);}
-                    if (message.getChatId().toString().equals("523626416")) {
+                    if (message.getChatId().toString().equals("your_id_telergamm_user")) {
                         sendMsgAdm(message, message.getFrom().getFirstName() + ", Вы перешли в раздел администратора");
                     }break;
                 case "Лимиты" :
-                    if (message.getChatId().toString().equals("523626416")) {
+                    if (message.getChatId().toString().equals("your_id_telergamm_user")) {
                         try {execute(chatAction); //Отправка уведомления о ответе Бота
                         } catch (TelegramApiException e) {
                             System.out.println(e);}
@@ -1736,7 +1736,7 @@ public class BotJarvisTelegramm extends TelegramLongPollingBot {
                             sendMsgAdm(message, message.getFrom().getFirstName() + ", \n К сожалению, что-то пошло не так, либо сервис недоступен. Скоро он снова будет работать!");
                         }}break;
                 case "Выгрузить пользователей" :
-                    if (message.getChatId().toString().equals("523626416")) {
+                    if (message.getChatId().toString().equals("your_id_telergamm_user")) {
                         try {execute(chatAction); //Отправка уведомления о ответе Бота
                         } catch (TelegramApiException e) {
                             System.out.println(e);}
@@ -1764,7 +1764,7 @@ public class BotJarvisTelegramm extends TelegramLongPollingBot {
                         }
                     }break;
                 case "Выгрузить фильмы за день" :
-                    if (message.getChatId().toString().equals("523626416")) {
+                    if (message.getChatId().toString().equals("your_id_telergamm_user")) {
                         try {execute(chatAction); //Отправка уведомления о ответе Бота
                         } catch (TelegramApiException e) {
                             System.out.println(e);}
@@ -1785,7 +1785,7 @@ public class BotJarvisTelegramm extends TelegramLongPollingBot {
                     try {execute(chatAction); //Отправка уведомления о ответе Бота
                     } catch (TelegramApiException e) {
                         System.out.println(e);}
-                    if (message.getChatId().toString().equals("523626416")) {
+                    if (message.getChatId().toString().equals("your_id_telergamm_user")) {
                         sendMsgHEADERAdm(message, message.getFrom().getFirstName() + ", вернулись на главную");
                     } else {
                         sendMsgHEADEROther(message, message.getFrom().getFirstName() + ", вернулись на главную");
@@ -1814,7 +1814,7 @@ public class BotJarvisTelegramm extends TelegramLongPollingBot {
                             try {execute(chatAction); //Отправка уведомления о ответе Бота
                             } catch (TelegramApiException e) {
                                 System.out.println(e);}
-                            if (message.getChatId().toString().equals("523626416")) {
+                            if (message.getChatId().toString().equals("your_id_telergamm_user")) {
                                 sendMsgHEADERAdm(message, message.getFrom().getFirstName() + ", " + openAiApiExample.getResponse(message.getText().substring(idBot + 5)));
                             } else {
                                 sendMsgHEADEROther(message, message.getFrom().getFirstName() + ", " + openAiApiExample.getResponse(message.getText().substring(idBot + 5)));
@@ -1822,7 +1822,7 @@ public class BotJarvisTelegramm extends TelegramLongPollingBot {
                             try {execute(chatAction); //Отправка уведомления о ответе Бота
                             } catch (TelegramApiException e) {
                                 System.out.println(e);}
-                            if (message.getChatId().toString().equals("523626416")) {
+                            if (message.getChatId().toString().equals("your_id_telergamm_user")) {
                                 sendMsgHEADERAdm(message, message.getFrom().getFirstName() + ",\nПростите что-то пошло не так... Попробуйте позже.");
                             } else {
                                 sendMsgHEADEROther(message, message.getFrom().getFirstName() + ",\nПростите что-то пошло не так... Попробуйте позже.");
@@ -1966,7 +1966,7 @@ public class BotJarvisTelegramm extends TelegramLongPollingBot {
                         try {
                             ResultSet resultSetSender = botSettings.getStatement().executeQuery(sqlSender);
                             while (resultSetSender.next()) {
-                                if (!resultSetSender.getString("chatID").equals("523626416")) {
+                                if (!resultSetSender.getString("chatID").equals("your_id_telergamm_user")) {
                                     chatID = resultSetSender.getString("chatID");
                                     userName = resultSetSender.getString("name");
                                     sendMessage.setText(userInput);
@@ -1980,7 +1980,7 @@ public class BotJarvisTelegramm extends TelegramLongPollingBot {
                             System.out.println(e);
                             sendMessage.setText("Ошибка рассылки для: \n" + chatID + "\nИмя: " +userName);
                             sendMessage.setReplyMarkup(getInlKeyboardUserDel(chatID, userName));
-                            sendMessage.setChatId("523626416");
+                            sendMessage.setChatId("your_id_telergamm_user");
                             try {
                                 execute(sendMessage);
                             }catch (TelegramApiException ex) {
@@ -2020,10 +2020,10 @@ public class BotJarvisTelegramm extends TelegramLongPollingBot {
                             }} catch (InterruptedException e) {
                             System.out.println(e);
                         }} else {
-                        if (message.getChatId().toString().equals("523626416")) {
+                        if (message.getChatId().toString().equals("your_id_telergamm_user")) {
                             //sendMsgHEADERAdm(message, message.getFrom().getFirstName() + ", " + message.getText() + " - Неизвестная команда");
                             SendInvoice sendInvoice = new SendInvoice();
-                            sendInvoice.setChatId("523626416");
+                            sendInvoice.setChatId("your_id_telergamm_user");
                             sendInvoice.setProviderToken("PAYMENT_PROVIDER_TOKEN");
                             sendInvoice.setTitle("Оплата за продукт или услугу");
                             sendInvoice.setDescription("Описание продукта или услуги");
