@@ -223,7 +223,7 @@ public class BotJarvisTelegramm extends TelegramLongPollingBot {
                             }catch (TelegramApiException ex) {
                                 sendMessage.setText("Ошибка рассылки для: \n" + chatIDErr + "\nИмя: " +nameErr);
                                 sendMessage.setReplyMarkup(getInlKeyboardUserDel(chatIDErr, nameErr));
-                                sendMessage.setChatId("523626416");
+                                sendMessage.setChatId("your_id_telergamm_user");
                                 try {
                                     execute(sendMessage);
                                 }catch (TelegramApiException fdf){System.out.println(fdf);}}
@@ -275,7 +275,7 @@ public class BotJarvisTelegramm extends TelegramLongPollingBot {
                             }catch (TelegramApiException e){
                                 sendMessage.setText("Ошибка рассылки для: \n" + chatID + "\nИмя: " +name);
                                 sendMessage.setReplyMarkup(getInlKeyboardUserDel(chatID, name));
-                                sendMessage.setChatId("523626416");
+                                sendMessage.setChatId("your_id_telergamm_user");
                                 try {
                                     execute(sendMessage);
                                 }catch (TelegramApiException fdf){System.out.println(fdf);}
@@ -488,7 +488,7 @@ public class BotJarvisTelegramm extends TelegramLongPollingBot {
             public void run(){
                 System.out.println("Начал выполнять сбор и отправку статистики по акциям.");
                 SendMessage sendMessage = new SendMessage();
-                sendMessage.setChatId("523626416");
+                sendMessage.setChatId("your_id_telergamm_user");
                 try {
                     sendMessage.setText(tinAPI.getActions());
                     execute(sendMessage);
@@ -1391,7 +1391,7 @@ public class BotJarvisTelegramm extends TelegramLongPollingBot {
                     }}else if (data.equals("come_back")) {
                     SendMessage sendMessage = new SendMessage();
                     if (query.getMessage().getChatId().toString().equals("523626416")){
-                        sendMessage.setChatId("523626416");
+                        sendMessage.setChatId("your_id_telergamm_user");
                         sendMessage.setReplyMarkup(getReplyKeybAdm());
                         sendMessage.setText("Вернулись на главную");
                         try {
