@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="381.0" prefWidth="614.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.mybot.bot.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <TextField fx:id="BOT_TOKEN" promptText="Введите токен бота" />
+    <TextField fx:id="BOT_NAME" promptText="Введите имя бота" />
+    <TextField fx:id="DRAYVER_PATH" promptText="Введите путь к Chrome-драйверу" />
+   <ToolBar prefHeight="40.0" prefWidth="200.0">
+      <items>
+          <Button fx:id="writedb" onMouseClicked="#onHelloButtonClick" text="Записать данные в БД" />
+          <Button fx:id="writedbdDEF" onMouseClicked="#onHelloButtonClick" text="Сбросить данные" />
+      </items>
+   </ToolBar>
+</VBox>
