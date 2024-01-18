@@ -29,7 +29,7 @@ public class FilmInformer {
         URL url = new URL("https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword=" + encoded);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
-        con.setRequestProperty("X-API-KEY", "0f4fb058-7a53-46f0-9f02-2f414c130f8f");
+        con.setRequestProperty("X-API-KEY", "your_api_key");
         con.setRequestProperty("Content-Type", "application/json");
         try (final BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()))) {
             String jsonLim = in.readLine();
@@ -76,7 +76,7 @@ public class FilmInformer {
                 URL urlFilmID = new URL("https://kinopoiskapiunofficial.tech/api/v1/staff?filmId="+filmID);
                 HttpURLConnection conFilmId = (HttpURLConnection) urlFilmID.openConnection();
                 conFilmId.setRequestMethod("GET");
-                conFilmId.setRequestProperty("X-API-KEY", "0f4fb058-7a53-46f0-9f02-2f414c130f8f");
+                conFilmId.setRequestProperty("X-API-KEY", "your_api_key");
                 conFilmId.setRequestProperty("Content-Type", "application/json");
                 try (final BufferedReader inFilmID = new BufferedReader(new InputStreamReader(conFilmId.getInputStream()))) {
                     String jsonLimFilmID = inFilmID.readLine();
@@ -109,7 +109,7 @@ public class FilmInformer {
         URL url = new URL("https://kinopoiskapiunofficial.tech/api/v1/persons?name=" + encoded);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
-        con.setRequestProperty("X-API-KEY", "0f4fb058-7a53-46f0-9f02-2f414c130f8f");
+        con.setRequestProperty("X-API-KEY", "your_api_key");
         con.setRequestProperty("Content-Type", "application/json");
         try (final BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()))) {
             String jsonLim = in.readLine();
@@ -169,7 +169,7 @@ public class FilmInformer {
         URL url = new URL("https://kinopoiskapiunofficial.tech/api/v2.2/films/premieres?year=" + year + "&month=" + month);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
-        con.setRequestProperty("X-API-KEY", "0f4fb058-7a53-46f0-9f02-2f414c130f8f");
+        con.setRequestProperty("X-API-KEY", "your_api_key");
         con.setRequestProperty("Content-Type", "application/json");
         String jsonLim;
         try (final BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()))) {
@@ -192,7 +192,7 @@ public class FilmInformer {
             URL urlFilms = new URL("https://kinopoiskapiunofficial.tech/api/v2.2/films/" + filmID + "/videos");
             HttpURLConnection conFilm = (HttpURLConnection) urlFilms.openConnection();
             conFilm.setRequestMethod("GET");
-            conFilm.setRequestProperty("X-API-KEY", "0f4fb058-7a53-46f0-9f02-2f414c130f8f");
+            conFilm.setRequestProperty("X-API-KEY", "your_api_key");
             conFilm.setRequestProperty("Content-Type", "application/json");
             try (final BufferedReader inFilm = new BufferedReader(new InputStreamReader(conFilm.getInputStream()))) {
                 String jsonLimFilmID = inFilm.readLine();
@@ -240,7 +240,7 @@ public class FilmInformer {
         URL url = new URL("https://kinopoiskapiunofficial.tech/api/v2.1/films/releases?year="+year+"&month="+month);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
-        con.setRequestProperty("X-API-KEY", "0f4fb058-7a53-46f0-9f02-2f414c130f8f");
+        con.setRequestProperty("X-API-KEY", "your_api_key");
         con.setRequestProperty("Content-Type", "application/json");
         String jsonLim;
         try (final BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()))) {

@@ -13,8 +13,8 @@ import java.net.http.HttpResponse;
 import java.util.HashMap;
 
 public class VKPostGroup {
-    final static String token = "vk1.a.T6WovCu7rioKwnYm7U1tx1g3cSpH_LMVLP-Isy8Ev2hgkBVxzIB5Y4ZcDX3xgXAQs9hHEHBmw22JRUAZz8p5d1OjylNkbI95j5boSwAJGtSkN9s2dINUvxkWko5smWZr31qD0a6Ve_kNK1M1QqFxK3wFnCQx4iHY4hTkxz3Ph9Lsx-1okxjwPPUfvvkDRz-IJAXlknQAE_SRzrlkWmj1pQ";
-    final static String owner_id = "-45327067";
+    final static String token = "your_token_vk";
+    final static String owner_id = "id_your_applications";
     final static String versionVk = "5.131";
     public synchronized static String getUserVK (String userName) throws IOException, InterruptedException {
         String url = "https://api.vk.com/method/users.search";

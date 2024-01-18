@@ -11,7 +11,7 @@ import java.net.http.HttpResponse;
 import java.io.IOException;
 
 public class OpenAiApiExample {
-    private static final String API_KEY = "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";
+    private static final String API_KEY = "your_key";
 
     // URL для отправки запросов к OpenAI
     private static final String OPENAI_URL = "https://api.openai.com/v1/engines/text-davinci-003/completions";

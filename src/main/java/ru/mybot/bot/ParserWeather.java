@@ -41,7 +41,7 @@ public class ParserWeather {
         URL urlConn = new URL(url);
         HttpURLConnection con = (HttpURLConnection) urlConn.openConnection();
         con.setRequestMethod("GET");
-        con.setRequestProperty("X-Yandex-API-Key", "cb878fae-386a-45d8-beef-e37ba353c71a");
+        con.setRequestProperty("X-Yandex-API-Key", "your_key");
         try (final BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()))) {
             String inputLine;
             final StringBuilder content = new StringBuilder();
@@ -172,7 +172,7 @@ public class ParserWeather {
 
         Geocoder geocoder = new Geocoder();
 
-        String url = "https://api.openweathermap.org/data/2.5/weather?q="+geocoder.getGeoPositionCityName(location).replace("деревня ","").replace("село ","").replace("поселок ","")+"&lang=ru&appid=7b0f3768baff4595f437509ae8db4dac&units=metric";
+        String url = "https://api.openweathermap.org/data/2.5/weather?q="+geocoder.getGeoPositionCityName(location).replace("деревня ","").replace("село ","").replace("поселок ","")+"&lang=ru&appid=your_key&units=metric";
         URL urlConn = new URL(url);
         HttpURLConnection con = (HttpURLConnection) urlConn.openConnection();
         con.setRequestMethod("GET");

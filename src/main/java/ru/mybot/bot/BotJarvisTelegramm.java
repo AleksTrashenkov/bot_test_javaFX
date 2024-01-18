@@ -122,7 +122,6 @@ public class BotJarvisTelegramm extends TelegramLongPollingBot {
         botSettings.setConnectMysql(DriverManager.getConnection(connectionString));
         botSettings.setStatement(botSettings.getConnectMysql().createStatement());*/
         String connectionString = "jdbc:sqlite:DB_Bot.db";
-        //String connectionString = System.getenv("JDBC_URL");
         botSettings.setConnectMysql(DriverManager.getConnection(connectionString));
         botSettings.setStatement(botSettings.getConnectMysql().createStatement());
 

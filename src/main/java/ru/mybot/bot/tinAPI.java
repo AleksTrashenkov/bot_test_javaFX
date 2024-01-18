@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.TimeZone;
 
 public class tinAPI {
-    final static String API_KEY = "t.UPOmMX5uv_LubtQYsCOeohJ1qRLY-rDyC0O97_1QG4gHi0v_wqbjhxVXVQBywlkW4KGve7N53jv9G8aLGK65BQ";
+    final static String API_KEY = "your_api_key";
     //final static String url = "https://api-invest.tinkoff.ru/openapi/sandbox";//тестовая песочница
     final static String url = "https://api-invest.tinkoff.ru/openapi/portfolio/currencies/"; //получение валютных активов клиента
     final static String urlPort = "https://api-invest.tinkoff.ru/openapi/portfolio/";//получение портфеля
@@ -106,9 +106,9 @@ public class tinAPI {
     public static String getActions() throws IOException, ParseException {
         var api = InvestApi.create(API_KEY);
 
-        var valNow = api.getOperationsService().getPortfolio("2073583573").join().getTotalAmountPortfolio().getValue();
-        var orderValMin = api.getOperationsService().getPortfolio("2073583573").join().getPositions();
-        var orderValMon = api.getOperationsService().getWithdrawLimits("2073583573").join();
+        var valNow = api.getOperationsService().getPortfolio("number_your_cab").join().getTotalAmountPortfolio().getValue();
+        var orderValMin = api.getOperationsService().getPortfolio("number_your_cab").join().getPositions();
+        var orderValMon = api.getOperationsService().getWithdrawLimits("number_your_cab").join();
         var orderInstrumentsService = api.getInstrumentsService();
         String currency;
         String currencyRub = null;
@@ -125,7 +125,7 @@ public class tinAPI {
         dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
         Date startDate = dateFormat.parse(LocalDateTime.now().minusMonths(5).toString());
         Date toDate = dateFormat.parse(LocalDateTime.now().plusDays(30).toString());
-        for (var orderVal : api.getOperationsService().getPortfolio("2073583573").join().getPositions()) {
+        for (var orderVal : api.getOperationsService().getPortfolio("number_your_cab").join().getPositions()) {
             if (orderVal.getInstrumentType().equals("share")) {
                 for (var orderShare : orderInstrumentsService.getDividends(orderVal.getFigi(), startDate.toInstant(), toDate.toInstant()).join()) {
                     Instant instant = Instant.ofEpochSecond(orderShare.getLastBuyDate().getSeconds());
@@ -181,11 +181,12 @@ public class tinAPI {
                         getActiveLitn();
     }
     public static String getActiveLitn() throws ParseException {
+        //второй инвест счет
         var api = InvestApi.create(API_KEY);
 
-        var valNow = api.getOperationsService().getPortfolio("2062013289").join().getTotalAmountPortfolio().getValue();
-        var orderValMin = api.getOperationsService().getPortfolio("2062013289").join().getPositions();
-        var orderValMon = api.getOperationsService().getWithdrawLimits("2062013289").join();
+        var valNow = api.getOperationsService().getPortfolio("number_your_cab").join().getTotalAmountPortfolio().getValue();
+        var orderValMin = api.getOperationsService().getPortfolio("number_your_cab").join().getPositions();
+        var orderValMon = api.getOperationsService().getWithdrawLimits("number_your_cab").join();
         var orderInstrumentsService = api.getInstrumentsService();
         String currency;
         String currencyRub = null;
@@ -202,7 +203,7 @@ public class tinAPI {
         dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
         Date startDate = dateFormat.parse(LocalDateTime.now().minusMonths(5).toString());
         Date toDate = dateFormat.parse(LocalDateTime.now().plusDays(30).toString());
-        for (var orderVal : api.getOperationsService().getPortfolio("2073583573").join().getPositions()) {
+        for (var orderVal : api.getOperationsService().getPortfolio("number_your_cab").join().getPositions()) {
             if (orderVal.getInstrumentType().equals("share")) {
                 for (var orderShare : orderInstrumentsService.getDividends(orderVal.getFigi(), startDate.toInstant(), toDate.toInstant()).join()) {
                     Instant instant = Instant.ofEpochSecond(orderShare.getLastBuyDate().getSeconds());

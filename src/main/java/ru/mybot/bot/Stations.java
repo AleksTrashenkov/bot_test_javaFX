@@ -22,7 +22,7 @@ public class Stations {
         longitude = location.substring(idLongitude + 10).split(",")[0];
         int idLatitude = location.indexOf("latitude");
         latitude = location.substring(idLatitude + 9).split(",")[0];
-        String API = "09ce583a-0e50-4554-add7-66217254427e";
+        String API = "your_key_api";
         String url = "https://api.rasp.yandex.net/v3.0/nearest_stations/?apikey=" + API + "&distance=5&transport_types=train" + "&lat=" + latitude + "&lng=" + longitude + "&lang=ru_RU";
         URL urlConn = new URL(url);
         HttpURLConnection con = (HttpURLConnection) urlConn.openConnection();

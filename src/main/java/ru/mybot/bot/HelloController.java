@@ -48,10 +48,6 @@ public class HelloController {
     @FXML
     void initialize() throws TelegramApiException {
         botSettings = new BotSettings();
-/*        BOT_TOKEN.setText("5850043919:AAF0AO_go3w5vBxbaFgIEogyvhpGo_twI7w");
-        BOT_NAME.setText("trashencom_bot");
-        BD_PATH.setText("D:\\projects\\Bot\\DB_Bot.db");
-        DRAYVER_PATH.setText("D:\\projects\\Bot\\chromedriver_win32\\chromedriver.exe");*/
 
         String connectionStringStart = "jdbc:sqlite:D:\\projects\\DB_Bot.db";
         String sqlReadTokNamStart = "SELECT rowid, token, name, driver_path FROM table_paths where rowid = 1;";

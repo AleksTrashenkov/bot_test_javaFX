@@ -21,7 +21,7 @@ public class Geocoder {
         longitude = location.substring(idLongitude + 10).split(",")[0];
         int idLatitude = location.indexOf("latitude");
         latitude = location.substring(idLatitude + 9).split(",")[0];
-        String API = "9580aa4c-af5d-4aaa-9275-1a5c9d07772b";
+        String API = "your_api_key";
         String url = "https://geocode-maps.yandex.ru/1.x/?apikey=" + API + "&geocode=" + longitude + "," + latitude + "&format=json";
         URL urlConn = new URL(url);
         HttpURLConnection con = (HttpURLConnection) urlConn.openConnection();
@@ -56,7 +56,7 @@ public class Geocoder {
         longitude = location.substring(idLongitude + 10).split(",")[0];
         int idLatitude = location.indexOf("latitude");
         latitude = location.substring(idLatitude + 9).split(",")[0];
-        String API = "9580aa4c-af5d-4aaa-9275-1a5c9d07772b";
+        String API = "your_api_key";
         String url = "https://geocode-maps.yandex.ru/1.x/?apikey=" + API + "&geocode=" + longitude + "," + latitude + "&format=json";
         URL urlConn = new URL(url);
         HttpURLConnection con = (HttpURLConnection) urlConn.openConnection();

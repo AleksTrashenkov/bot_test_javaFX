@@ -148,24 +148,5 @@ public class Bot_console_controller {
                 System.out.println(e);
             }
         });
-/*        restart.setOnAction(event -> {
-            // Получаем ссылку на текущий Stage
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            // Закрываем текущий Stage
-            stage.close();
-            // Вызываем статический метод restart класса Platform
-            Platform.runLater(() -> {
-                try {
-                    // Получаем ссылку на класс, содержащий метод main()
-                    Class<?> clazz = Class.forName("ru.mybot.bot.Main");
-                    // Получаем метод main()
-                    Method main = clazz.getMethod("main", String[].class);
-                    // Вызываем метод main() с пустым массивом аргументов
-                    main.invoke(null, (Object) new String[] {});
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            });
-        });*/
     }
 }
