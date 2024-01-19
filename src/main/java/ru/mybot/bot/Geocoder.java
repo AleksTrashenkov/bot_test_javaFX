@@ -26,7 +26,6 @@ public class Geocoder {
         URL urlConn = new URL(url);
         HttpURLConnection con = (HttpURLConnection) urlConn.openConnection();
         con.setRequestMethod("GET");
-        //con.setRequestProperty("X-Yandex-API-Key", "cb878fae-386a-45d8-beef-e37ba353c71a");
         try (final BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()))) {
             String inputLine;
             final StringBuilder content = new StringBuilder();
@@ -61,7 +60,6 @@ public class Geocoder {
         URL urlConn = new URL(url);
         HttpURLConnection con = (HttpURLConnection) urlConn.openConnection();
         con.setRequestMethod("GET");
-        //con.setRequestProperty("X-Yandex-API-Key", "cb878fae-386a-45d8-beef-e37ba353c71a");
         try (final BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()))) {
             String inputLine;
             final StringBuilder content = new StringBuilder();
